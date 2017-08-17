@@ -1,0 +1,77 @@
+#ifndef BuildConstants_H
+#define BuildConstants_H
+
+#include "Main.h"
+
+#include <string>
+
+#include "Token.h"
+
+namespace Prac
+{
+
+	enum BuildException
+	{
+		INVALID_START_OF_STATEMENT,
+		INVALID_ESCAPE_CHAR_USAGE,
+		EXPECTED_KEYWORD_NOT_FOUND,
+		EXPECTED_IDENTIFIER_NOT_FOUND,
+		EXPECTED_SEMICOLON_NOT_FOUND,
+		EXPECTED_CLOSEPARENTH_NOT_FOUND,
+		EXPECTED_CLOSEBRACKET_NOT_FOUND,
+		EXPECTED_OPENBRACKET_NOT_FOUND,
+		EXPECTED_OTHERWISE_BRANCH_NOT_FOUND,
+		INVALID_IDENTIFIER,
+		KEYWORD_AS_IDENTIFIER,
+		INVALID_TYPENAME,
+		INVALID_OPERANDS,
+		UNSUPPORTED_OPERATION,
+		TYPES_DONT_MATCH,
+		NON_BOOLEAN_CONDITIONAL,
+		UNEXPECTED_END,
+	};
+
+	enum ReservedKeyword
+	{
+		NONE,
+		KEY_A,
+		KEY_AN,
+		KEY_AND,
+		KEY_AS,
+		KEY_ASSIGN,
+		KEY_DECLARE,
+		KEY_DOESNT,
+		KEY_EQUAL,
+		KEY_EQUALS,
+		KEY_FALSE,
+		KEY_FROM,
+		KEY_GET,
+		KEY_IF,
+		KEY_IN,
+		KEY_IT,
+		KEY_NEWLINE,
+		KEY_NOT,
+		KEY_OF,
+		KEY_OR,
+		KEY_OTHERWISE,
+		KEY_PRINT,
+		KEY_STORE,
+		KEY_THE,
+		KEY_TO,
+		KEY_TRUE,
+		KEY_USER,
+		KEY_WHILE,
+
+		TYPE_INTEGER,
+		TYPE_NUMBER,
+		TYPE_CHARACTER,
+		TYPE_BOOLEAN,
+		TYPE_TYPE,
+	};
+
+	ReservedKeyword getKeyword(const Token& token);
+	ReservedKeyword getKeyword(const std::string& str);
+
+}
+
+#endif

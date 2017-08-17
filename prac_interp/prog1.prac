@@ -1,0 +1,29 @@
+declare i as an integer;
+assign 1 to i;
+
+while i < 5000 {
+	declare j as an integer;
+	assign 2 to j;
+	
+	declare numFactors as an integer;
+	assign 0 to numFactors;
+	
+	declare stopPoint as an integer;
+	assign i / 2 to stopPoint;
+	
+	while j <= stopPoint and numFactors equals 0
+	{
+		if i mod j equals 0
+		{
+			assign numFactors + 1 to numFactors;
+		}
+		assign j + 1 to j;
+	}
+	
+	if numFactors equals 0
+	{
+		print i + " is prime\n";
+	}
+	
+	assign i + 1 to i;
+}
